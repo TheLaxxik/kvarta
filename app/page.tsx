@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Mark from '@/components/Mark'
 import OpenStatus from '@/components/OpenStatus'
 import { site } from '@/lib/data'
 
@@ -8,7 +9,7 @@ export default function Home() {
       <section className="hero">
         <div className="w grid">
           <div>
-            <h1><span><i>{site.name}</i></span></h1>
+            <h1><span><i><Mark />{site.name}</i></span></h1>
             <p className="lead">Reštaurácia a catering v Dolnej Zábrežnej. Varíme poctivo, jednoducho a z čerstvých surovín.</p>
             <OpenStatus />
             <div className="actions">
