@@ -34,7 +34,7 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="w split even">
+        <div className="w split even tight">
           <h2>Malá firma z Dolnej Zábrežnej</h2>
           <div>
             <p>Kvarta je rodinná gastro firma. V reštaurácii varíme cez deň obedy a cez víkend večere.</p>
