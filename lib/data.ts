@@ -1,13 +1,17 @@
+// Ceny sú čísla; formát (čiarka, € s nezalomiteľnou medzerou) rieši Intl.
+const eurFmt = new Intl.NumberFormat('sk-SK', { style: 'currency', currency: 'EUR' })
+export const eur = (n: number) => eurFmt.format(n)
+
 export const site = {
   name: 'Kvarta',
   legal: 'Kvarta Gastro s.r.o.',
   street: 'Mlynská 8',
   village: 'Dolná Zábrežná',
-  phone: '02 0000 0000',
+  phone: '02\u00a00000\u00a00000', // U+00A0: číslo sa nezalomí uprostred
   tel: '+421200000000',
   email: 'ahoj@kvarta.example',
   ico: '00000000',
-  lunchPrice: '7,50 €',
+  lunchPrice: 7.5,
 } as const
 
 // Index 0 = pondelok … 6 = nedeľa. Hodiny ako desatinné číslo (10.5 = 10:30), null = zatvorené.
@@ -31,28 +35,28 @@ export const dailyMenu = [
   { name: 'Zeleninové rizoto', note: 'bezmäsité' },
 ]
 
-export type MenuItem = { name: string; price: string; note?: string }
+export type MenuItem = { name: string; price: number; note?: string }
 export const menu: { title: string; items: MenuItem[] }[] = [
   { title: 'Polievky', items: [
-    { name: 'Hovädzí vývar s rezancami', price: '2,40 €' },
-    { name: 'Kapustnica', price: '3,20 €' },
+    { name: 'Hovädzí vývar s rezancami', price: 2.4 },
+    { name: 'Kapustnica', price: 3.2 },
   ] },
   { title: 'Mäsité jedlá', items: [
-    { name: 'Kuracie prsia na smotane', price: '8,90 €' },
-    { name: 'Bravčový rezeň, zemiakový šalát', price: '9,50 €' },
-    { name: 'Hovädzí guláš, knedľa', price: '10,90 €' },
+    { name: 'Kuracie prsia na smotane', price: 8.9 },
+    { name: 'Bravčový rezeň, zemiakový šalát', price: 9.5 },
+    { name: 'Hovädzí guláš, knedľa', price: 10.9 },
   ] },
   { title: 'Bezmäsité jedlá', items: [
-    { name: 'Bryndzové halušky', price: '8,50 €' },
-    { name: 'Zeleninové rizoto', price: '7,90 €' },
-    { name: 'Vyprážaný syr, hranolky', price: '8,20 €' },
+    { name: 'Bryndzové halušky', price: 8.5 },
+    { name: 'Zeleninové rizoto', price: 7.9 },
+    { name: 'Vyprážaný syr, hranolky', price: 8.2 },
   ] },
   { title: 'Nápoje', items: [
-    { name: 'Domáca limonáda 0,3 l', price: '2,20 €' },
-    { name: 'Pivo 0,5 l', price: '1,90 €' },
-    { name: 'Káva', price: '1,80 €' },
+    { name: 'Domáca limonáda 0,3\u00a0l', price: 2.2 },
+    { name: 'Pivo 0,5\u00a0l', price: 1.9 },
+    { name: 'Káva', price: 1.8 },
   ] },
   { title: 'Na objednávku', items: [
-    { name: 'Pečená kačica s červenou kapustou', price: '14,50 €', note: 'objednať 24 hodín vopred' },
+    { name: 'Pečená kačica s červenou kapustou', price: 14.5, note: 'objednať 24 hodín vopred' },
   ] },
 ]

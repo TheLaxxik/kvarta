@@ -22,7 +22,7 @@ export default function Kontakt() {
         <div className="w split even">
           <div>
             <h2>Kde nás nájdete</h2>
-            <address>{site.name}<br />{site.street}<br />{site.village}</address>
+            <address><span translate="no">{site.name}</span><br />{site.street}<br />{site.village}</address>
             <a className="phone" href={`tel:${site.tel}`}>{site.phone}</a>
             <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
           </div>

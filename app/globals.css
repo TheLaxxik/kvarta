@@ -1,8 +1,11 @@
 :root{--g:#143a2c;--gd:#0e2b20;--y:#f3c846;--r:#9a2514;--c:#fff4e0;--m:#cbd6c2;--e:cubic-bezier(.16,1,.3,1)}
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{color-scheme:dark;scroll-behavior:smooth;scroll-padding-top:7.5rem}
 body{margin:0;background:var(--g);color:var(--y);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-a{color:inherit}
+a{color:inherit;text-underline-offset:.2em;touch-action:manipulation;-webkit-tap-highlight-color:rgba(243,200,70,.2)}
+a:hover{text-decoration-thickness:2px}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:10;padding:.6rem 1rem;background:var(--y);color:var(--g);font-weight:700;border-radius:.5rem;text-decoration:none}
+.skip:focus-visible{top:.75rem}
 :focus-visible{outline:3px solid var(--y);outline-offset:3px;border-radius:2px}
 ::selection{background:var(--y);color:var(--g)}
 .w{max-width:70rem;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
@@ -23,7 +26,7 @@ nav{grid-area:nav;display:flex;justify-content:space-between;gap:0 1rem;border-t
 nav a{text-decoration:none;font-weight:600;padding:.6rem 0;border-bottom:2px solid transparent}
 nav a:hover,nav a[aria-current]{border-color:var(--y)}
 header .btn{grid-area:cta;min-height:2.5rem;padding:.4rem 1.1rem}
-@media(min-width:40rem){header .w{grid-template-columns:auto 1fr auto;grid-template-areas:"brand nav cta";gap:0 1.5rem}nav{justify-content:flex-end;gap:0 1.5rem;border-top:0}header .btn{min-height:2.75rem;padding:.6rem 1.25rem}}
+@media(min-width:40rem){html{scroll-padding-top:5.5rem}header .w{grid-template-columns:auto 1fr auto;grid-template-areas:"brand nav cta";gap:0 1.5rem}nav{justify-content:flex-end;gap:0 1.5rem;border-top:0}header .btn{min-height:2.75rem;padding:.6rem 1.25rem}}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;padding:.6rem 1.25rem;background:var(--r);color:var(--c);font-weight:700;text-decoration:none;border-radius:999px;transition:transform .25s var(--e)}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:scale(.97)}
@@ -57,7 +60,7 @@ h1 .mark{width:.9em;height:.9em}
 .svc{display:grid;gap:2rem}
 @media(min-width:56rem){.svc,.steps{grid-template-columns:repeat(3,1fr)}.svc,.steps{gap:3rem}}
 .svc>div{border-top:2px solid currentColor;padding-top:1rem}
-.svc b,.steps b{display:block;font:400 1.6rem/1.2 var(--slab);margin-bottom:.5rem}
+.svc h3,.steps h3{font:400 1.6rem/1.2 var(--slab);letter-spacing:0;text-transform:none;opacity:1;margin:0 0 .5rem}
 .svc a{font-weight:700}
 .steps{list-style:none;padding:0;margin:2rem 0 0;display:grid;gap:1.5rem;counter-reset:s}
 .steps li::before{counter-increment:s;content:counter(s);display:block;font:400 2.75rem/1 var(--slab);margin-bottom:.5rem}
@@ -67,13 +70,14 @@ h1 .mark{width:.9em;height:.9em}
 .rows:last-child{margin-bottom:0}
 .split+.note{margin-top:2rem}
 .rows em{display:block;font:400 .95rem/1.4 var(--sans);font-style:normal;opacity:.8}
-.rows b{margin-left:auto;font:700 1.05rem var(--sans);white-space:nowrap}
+.rows li>span{min-width:0;overflow-wrap:anywhere}
+.rows b{margin-left:auto;font:700 1.05rem var(--sans);white-space:nowrap;font-variant-numeric:tabular-nums}
 .note{font-size:.95rem;opacity:.8}
 
 table{width:100%;max-width:26rem;border-collapse:collapse}
 th{text-align:left;font-weight:600}
 th,td{padding:.6rem 0;border-bottom:1px solid rgba(243,200,70,.25)}
-td{text-align:right}
+td{text-align:right;font-variant-numeric:tabular-nums}
 tr.today{font-weight:700;color:var(--c)}
 .phone{display:block;font:400 clamp(2rem,6vw,3rem)/1.1 var(--slab);text-decoration:none;margin:.5rem 0 1rem}
 address{font-style:normal;font-size:1.2rem}
@@ -82,4 +86,5 @@ footer{background:var(--gd);color:var(--m);padding:2.5rem 0;font-size:.95rem}
 footer .w{display:grid;gap:1.5rem}
 @media(min-width:56rem){footer .w{grid-template-columns:1fr 1fr 2fr}}
 footer p{margin:0}
+footer a:hover{color:var(--y)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}h1 i{animation:none}.btn,.coaster{transition:none}.btn:hover,.btn:active{transform:none}.coaster:hover{transform:rotate(-7deg)}}

@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header>
       <div className="w">
-        <Link className="brand" href="/"><Mark />{site.name}</Link>
+        <Link className="brand" href="/" translate="no"><Mark />{site.name}</Link>
         <nav aria-label="Hlavná navigácia">
           {links.map((l) => (
             <Link key={l.href} href={l.href} aria-current={path === l.href ? 'page' : undefined}>{l.label}</Link>

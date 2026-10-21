@@ -20,9 +20,9 @@ export default function Catering() {
         <div className="w">
           <h2>Čo vieme zariadiť</h2>
           <div className="svc">
-            <div><b>Firemné obedy</b><p>Pravidelné obedy pre tímy, od 15 osôb. Donáška do firmy.</p></div>
-            <div><b>Oslavy a rodinné akcie</b><p>Narodeniny, krstiny, rodinné stretnutia. Studené misy aj teplé jedlá.</p></div>
-            <div><b>Svadobné hostiny</b><p>Menu na mieru podľa vašich predstáv a počtu hostí.</p></div>
+            <div><h3>Firemné obedy</h3><p>Pravidelné obedy pre tímy, od 15 osôb. Donáška do firmy.</p></div>
+            <div><h3>Oslavy a rodinné akcie</h3><p>Narodeniny, krstiny, rodinné stretnutia. Studené misy aj teplé jedlá.</p></div>
+            <div><h3>Svadobné hostiny</h3><p>Menu na mieru podľa vašich predstáv a počtu hostí.</p></div>
           </div>
         </div>
       </section>
@@ -31,9 +31,9 @@ export default function Catering() {
         <div className="w">
           <h2>Ako to funguje</h2>
           <ol className="steps">
-            <li><b>Ozvite sa</b><p>Zavolajte alebo napíšte, koľko vás bude a kedy.</p></li>
-            <li><b>Dostanete ponuku</b><p>Pošleme vám menu a cenu do dvoch pracovných dní.</p></li>
-            <li><b>Pripravíme a dovezieme</b><p>Jedlo dorazí v dohodnutom čase.</p></li>
+            <li><h3>Ozvite sa</h3><p>Zavolajte alebo napíšte, koľko vás bude a kedy.</p></li>
+            <li><h3>Dostanete ponuku</h3><p>Pošleme vám menu a cenu do 2 pracovných dní.</p></li>
+            <li><h3>Pripravíme a dovezieme</h3><p>Jedlo dorazí v dohodnutom čase.</p></li>
           </ol>
         </div>
       </section>

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Mark from '@/components/Mark'
 import OpenStatus from '@/components/OpenStatus'
-import { site } from '@/lib/data'
+import { eur, site } from '@/lib/data'
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <section className="hero">
         <div className="w grid">
           <div>
-            <h1><span><i><Mark />{site.name}</i></span></h1>
+            <h1><span><i translate="no"><Mark />{site.name}</i></span></h1>
             <p className="lead">Reštaurácia a catering v Dolnej Zábrežnej. Varíme poctivo, jednoducho a z čerstvých surovín.</p>
             <OpenStatus />
             <div className="actions">
@@ -17,8 +17,8 @@ export default function Home() {
               <Link className="btn ghost" href="/ponuka">Pozrieť ponuku</Link>
             </div>
           </div>
-          <Link className="coaster" href="/ponuka#obed" aria-label={`Obedové menu za ${site.lunchPrice}, pondelok až piatok od 11:00 do 14:00, zobraziť detaily`}>
-            <span>Obedové menu</span><b>{site.lunchPrice}</b><small>Po–Pi<br />11:00 – 14:00</small>
+          <Link className="coaster" href="/ponuka#obed" aria-label={`Obedové menu za ${eur(site.lunchPrice)}, pondelok až piatok od 11:00 do 14:00, zobraziť detaily`}>
+            <span>Obedové menu</span><b>{eur(site.lunchPrice)}</b><small>Po–Pi<br />11:00 – 14:00</small>
           </Link>
         </div>
       </section>
@@ -27,9 +27,9 @@ export default function Home() {
         <div className="w">
           <h2>Čo robíme</h2>
           <div className="svc">
-            <div><b>Reštaurácia</b><p>Stála ponuka, jedlá z mäsa aj bezmäsité. Otvorené šesť dní v týždni.</p><Link href="/ponuka">Jedálny lístok</Link></div>
-            <div><b>Obedové menu</b><p>Každý pracovný deň nové menu. Môžete si ho objednať telefonicky.</p><Link href="/ponuka#obed">Dnešné menu</Link></div>
-            <div><b>Catering a akcie</b><p>Firemné obedy, oslavy a svadby. Z našej kuchyne k vám.</p><Link href="/catering">Ako to funguje</Link></div>
+            <div><h3>Reštaurácia</h3><p>Stála ponuka, jedlá z mäsa aj bezmäsité. Otvorené 6 dní v týždni.</p><Link href="/ponuka">Jedálny lístok</Link></div>
+            <div><h3>Obedové menu</h3><p>Každý pracovný deň nové menu. Môžete si ho objednať telefonicky.</p><Link href="/ponuka#obed">Dnešné menu</Link></div>
+            <div><h3>Catering a akcie</h3><p>Firemné obedy, oslavy a svadby. Z našej kuchyne k vám.</p><Link href="/catering">Ako to funguje</Link></div>
           </div>
         </div>
       </section>

@@ -18,8 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="sk" className={`${slab.variable} ${sans.variable}`}>
       <body>
+        <a className="skip" href="#main">Preskočiť na obsah</a>
         <Header />
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <Footer />
       </body>
     </html>

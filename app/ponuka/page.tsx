@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { dailyMenu, menu, site } from '@/lib/data'
+import { dailyMenu, eur, menu, site } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: 'Ponuka',
@@ -14,7 +14,7 @@ function Group({ title, items }: (typeof menu)[number]) {
         {items.map((i) => (
           <li key={i.name}>
             <span>{i.name}{i.note && <em>{i.note}</em>}</span>
-            <b>{i.price}</b>
+            <b>{eur(i.price)}</b>
           </li>
         ))}
       </ul>
@@ -35,7 +35,7 @@ export default function Ponuka() {
       <section className="band" id="obed">
         <div className="w split even">
           <div>
-            <h2>Obedové menu {site.lunchPrice}</h2>
+            <h2>Obedové menu {eur(site.lunchPrice)}</h2>
             <p>Po–Pi, 11:00 – 14:00. Mení sa každý deň. Objednať ho môžete telefonicky.</p>
             <a className="btn" href={`tel:${site.tel}`}>Objednať obed</a>
           </div>
